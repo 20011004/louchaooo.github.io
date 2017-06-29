@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+        <script src="FileSaver.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1>CSRF PoC Generator</h1>
+                <p>Method:</p>
+                <select id="method" value="POST" class="form-control" name="select">
+                    <option value="GET">GET</option> 
+                    <option value="HEAD">HEAD</option>
+                    <option value="POST" selected>POST</option>
+                </select> 
+                <p>Encoding</p>
+                <select id="encoding" value="application/x-www-form-urlencoded" class="form-control" name="select">
+                    <option value="multipart/form-data">multipart/form-data</option> 
+                    <option value="application/x-www-form-urlencoded" selected>application/x-www-form-urlencoded</option> 
+                    <option value="text/plain">multipart/plain</option> 
+                </select> 
+                <p>Data:</p>
+                <textarea autofocus placeholder="value1=foo&value2=bar&value3=foobar" id="body" class="form-control" rows="3"></textarea>
+                <p>URI:</p>
+                <input type="text" id="URI" placeholder="https://google.com" class="form-control">
+                </br>
+                <button class="btn btn-default" onclick="startDownload()">Download CSRF PoC!</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </body>
+</html>
